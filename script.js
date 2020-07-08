@@ -49,7 +49,7 @@ function makeQuestions() {
 
 function displayScore() {
   document.getElementById("quiz").classList.add("d-none");
-  document.getElementById("user-score").classList.remove("d-none");
+  document.getElementById("submit-score").classList.remove("d-none");
   userScoreElement.textContent = "FINAL SCORE: " + secondsLeft + ".";
 }
 
