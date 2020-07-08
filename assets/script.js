@@ -4,7 +4,7 @@ var secondsLeft = (questions.length * 15 + 1);
 var timerEl = document.getElementById("timer");
 var scoreSubmitEl = document.querySelector("#your-score");
 var userScoreEl = document.getElementById("user-score");
-var question = document.get.getElementById("questions");
+var question = document.getElementById("questions");
 var answerChoices = document.getElementById("answers");
 var userName;
 var questionNumber = -1;
@@ -39,7 +39,7 @@ function createQuestions() {
 
   var choices = questions[questionNumber].choices;
 
-  for (var i = 0: i < choices.length; i++) {
+  for (var i = 0; i < choices.length; i++) {
     var nextChoice = document.createElement("button");
 
     nextChoice.textCOntent = choices[i]
