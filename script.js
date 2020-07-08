@@ -1,12 +1,12 @@
 var startBtn = document.getElementById("startBtn");
-var submitBtn = document.querySelector("button.submitBtn")
-var secondsLeft = (questions.length * 15 + 1);
-var timerEl = document.getElementById("timer");
-var scoreSubmitEl = document.querySelector("#your-score");
-var userScoreEl = document.getElementById("user-score");
-var question = document.getElementById("questions");
+var submitBtn = document.querySelector("button.submitBtn");
+var secondsLeft = (questions.length * 20 + 1);
+var timerElement = document.getElementById("timer");
+var submitScoreElement = document.querySelector("#submit-score");
+var userScoreElement = document.getElementById("user-score");
+var questionHead = document.getElementById("questions");
 var answerChoices = document.getElementById("answers");
-var userName;
+var userNameInput;
 var questionNumber = -1;
 var answer;
 
@@ -15,7 +15,7 @@ function startTimer() {
   document.getElementById("home").classList.add('d-none');
   document.getElementById("quiz").classList.remove('d-none');
   setTimer();
-  createQuestions();
+  makeQuestions();
 }
 
 function setTimer() {
@@ -30,7 +30,7 @@ function setTimer() {
   }, 1000);
 }
 
-function createQuestions() {
+function makeQuestions() {
   questionNumber++;
   answer = questions[questionNumber].answer
 
@@ -39,18 +39,18 @@ function createQuestions() {
 
   var choices = questions[questionNumber].choices;
 
-  for (var i = 0; i < choices.length; i++) {
+  for (var q = 0; q < choices.length; q++) {
     var nextChoice = document.createElement("button");
 
-    nextChoice.textCOntent = choices[i]
+    nextChoice.textContent = choices[q]
     answerBtn = answerChoices.appendChild(nextChoice).setAttribute("class", "p-3 m-1 btn btn-light btn-block");
   }
 }
 
 function displayScore() {
-  document.getElementById("quiz").claasList.add("d-none");
-  document.getElementById("your-score").classList.remove("d-none");
-  userScoreEl.textContent = "Final Score: " + secondsLeft + ".";
+  document.getElementById("quiz").classList.add("d-none");
+  document.getElementById("user-score").classList.remove("d-none");
+  userScoreElement.textContent = "FINAL SCORE: " + secondsLeft + ".";
 }
 
 startBtn.addEventListener("click", startTimer);
@@ -58,15 +58,15 @@ submitBtn.addEventListener("click", function (event) {
   event.stopPropagation();
   addScore();
 
-  window.location.href = "./assets/scoreboard.html"
+  window.location.href = './highscores.html'
 });
 
 function addScore () {
-    userName = document.getElementById("userName").value
+    userNameInput = document.getElementById("userName").value
 
 
 var newScore = {
-    name: userName,
+    name: userNameInput,
     score: secondsLeft
   };
   var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
@@ -75,17 +75,17 @@ var newScore = {
 }
 
 function hideFeedback(){
-  var pElement = document.getElementsByClassName("torf")[0]
-  pElement.style.display="none"
+  var pElement = document.getElementsByClassName("feedback")[0]
+  pElement.style.display='none'
 }
 
-function showFeed(){
-  var pElement = document.getElementsByClassName("torf") [0]
-  pElement.removeAttribute("style");
+function showFeedback(){
+  var pElement = document.getElementsByClassName("feedback") [0]
+  pElement.removeAttribute('style');
 }
 
 answerChoices.addEventListener("click", function (event){
-  var pElement = document.getElementsByClassName("torf") [0]
+  var pElement = document.getElementsByClassName("feedback") [0]
   
   if (answer === event.target.textContent) {
     pElement.innerHTML = "tru";
@@ -95,7 +95,7 @@ answerChoices.addEventListener("click", function (event){
   } else {
     pElement.innerHTML = "false";
     setTimeout(hideFeedback,1225);
-    secondsLeft = secondsLeft - 15;
+    secondsLeft = secondsLeft - 20;
     showFeedback();  
   }
   makeQuestions();

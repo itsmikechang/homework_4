@@ -4,59 +4,53 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="styles.css">
   <title>Javascript Coding Quiz!</title>
 </head>
 <body>
+  <header class="p-2" style="background-color: bisque;">
+    <strong><a href="highscores.html">Score Board</a></strong>  
+    <span id="timer" class="float-right mr-2">Time: 0</span>
+  </header>
 
-  <!-- Homebase -->
-  <div class="jumbotron" id="home">
-    <section class="home-base">
-      <article class="intro-box">
-        <h1 class="display-4">Javascript Coding Quiz!</h1>
-        <p class="lead">This is a simple quiz designed to evaluate your knowledge thus far in javascript.</p>
-        <hr class="my-4">
-        <p>
-          The quiz is 10 questions in length and you will have 10 minutes to complete your quiz. 
-          When the last remaining question is answered, your score will display.
-          The quiz will also display a leaderboard of your own highest (or lowest) scores.
-          Good luck! 
-        </p>
-        <button type="button" id="startBtn" class="btn btn-info btn-lg">Start</button>
-      </article>
-    </section>
+  <div class="container mt-5" id="home">
+    <div class="row justify-content-center mt-5 pt-3 pb-3">
+      <div cass="col-10 col-lg-8 text-center">
+        <h1>Javascript Quiz!</h1>
+        <h2><p>10 Questions, 150 seconds. Do you have what it takes?</p></h2>
+        <button type="button" id="startBtn" class="btn btn-info btn-lg">Good Luck!</button>
+      </div>
+    </div>
+  </div>
 
-    <!-- Where the quiz goes-->
-    <div class="jumbotron" id="quiz">
-      <section class="quiz-section">
-        <article class="quiz-box">
-          <h2 id="questions" class="mb-4">Question</h2>
-          <ul id="answers" class="answers-list">
-            <li class="answerChoice">1) </li>
-            <li class="answerChoice">2) </li>
-            <li class="answerChoice">3) </li>
-            <li class="answerChoice">4) </li>
+   <div class="container mt-5 d-none" id="quiz">
+     <div class="row justify-content-center mt-5 pt-3 pb-3">
+       <div class="col-10 col-lg-8" id="QA-block">
+         <h3 id="questions" class="mb-4">Question</h3>
+         <ul id="answers" class="list-unstyled">
+           <li class="answerChoice">1) </li>         
+           <li class="answerChoice">2) </li> 
+           <li class="answerChoice">3) </li> 
+           <li class="answerChoice">4) </li> 
           </ul>
-        </article>
-      </section>
+          <p class="feedback"></p>
+       </div>
+     </div>
+   </div>
 
-    <!-- finishline screen-->
-    <div class="jumbotron" id="your-score">
-      <section class="score-section">
-        <article class="score-box">
-          <h2>Hurrah! You Finished!</h2>
-          <p id="user-score"></p>
-          <form class="form-group">
-            <label for="new-score">Nombre es? </label>
-            <input type="text" id="userName">
-            <button type="button" class="btn btn-primary btn-lg submitBtn">Submit Score</button>
-          </form>
-        </article>
-      </section>
-
-   
-
-
+   <div class="container mt-5 d-none" id="submit-score">
+    <div class="row justify-content-center mt-5 pt-3 pb-3">
+      <div class="col-10 col-lg-8">
+        <h2>Test Over</h2>
+        <p id="user-score"></p>
+        <form class="form-group">
+          <label for="new-score">What's Your Name Buddy?</label>
+          <input type="text" id="userName">
+          <button type="button" class="btn btn-info btn-sm submitBtn">Submit Score to Score Board</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -65,7 +59,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="assets/script.js"></script>
-  <script src="assets/questions.js"></script>
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
