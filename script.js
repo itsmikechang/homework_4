@@ -1,6 +1,6 @@
 var startBtn = document.getElementById("startBtn");
 var submitBtn = document.querySelector("button.submitBtn");
-var secondsLeft = (questions.length * 20 + 1);
+var secondsLeft = (questions.length * 15 + 1);
 var timerElement = document.getElementById("timer");
 var submitScoreElement = document.querySelector("#submit-score");
 var userScoreElement = document.getElementById("user-score");
@@ -95,7 +95,7 @@ answerChoices.addEventListener("click", function (event){
   } else {
     pElement.innerHTML = "false";
     setTimeout(hideFeedback,1225);
-    secondsLeft = secondsLeft - 20;
+    secondsLeft = secondsLeft - 15;
     showFeedback();  
   }
   makeQuestions();
