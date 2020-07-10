@@ -1,6 +1,6 @@
 var restartBtn = document.querySelector("button.restartBtn"),
     clearBtn = document.querySelector("button.clearBtn"),
-    highScores = JSON.parse(localstorage.getItem("highScores") || "[]"),
+    highScores = JSON.parse(localStorage.getItem("highScores") || "[]"),
     scoreList = document.getElementById("score-list");
 
 highScores.sort(function (a,b) {

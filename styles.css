@@ -53,3 +53,7 @@ li::before {
 #scoresTitle {
   padding-left: 16px;
 }
+
+footer {
+  margin-top: 300px;
+}

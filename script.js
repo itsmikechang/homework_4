@@ -4,9 +4,9 @@ var secondsLeft = (questions.length * 15 + 1);
 var timerElement = document.getElementById("timer");
 var submitScoreElement = document.querySelector("#submit-score");
 var userScoreElement = document.getElementById("user-score");
+var userNameInput;
 var questionHead = document.getElementById("questions");
 var answerChoices = document.getElementById("answers");
-var userNameInput;
 var questionNumber = -1;
 var answer;
 
